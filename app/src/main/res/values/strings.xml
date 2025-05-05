@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Stock Tracker</string>
+    <string name="inventory">Inventory</string>
+    <string name="scan">Scan</string>
+    <string name="search_hint">Search for items e.g. tea</string>
+    <string name="scan_qr">Scan QR Code</string>
+    <string name="resultqr">Result:</string>
+
+
+</resources>
