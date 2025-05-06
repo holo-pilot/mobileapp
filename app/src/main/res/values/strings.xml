@@ -3,8 +3,10 @@
     <string name="inventory">Inventory</string>
     <string name="scan">Scan</string>
     <string name="search_hint">Search for items e.g. tea</string>
-    <string name="scan_qr">Scan QR Code</string>
+    <string name="scan_qr">Scan Barcode</string>
     <string name="resultqr">Result:</string>
+    <string name="updatebtn">Update</string>
+    <string name="deletebtn">Delete</string>
 
 
 </resources>
