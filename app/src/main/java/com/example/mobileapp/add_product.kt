@@ -17,7 +17,7 @@ class add_product : AppCompatActivity() {
         val productQuantityEditText = findViewById<EditText>(R.id.productQuantityEditText)
         val addProductButton = findViewById<Button>(R.id.addProductButton)
 
-        val barcode = intent.getStringExtra("barcode")
+        val barcode = intent.getStringExtra("Barcode")
 
         addProductButton.setOnClickListener {
             val name = productNameEditText.text.toString()
@@ -25,10 +25,10 @@ class add_product : AppCompatActivity() {
             val quantity = productQuantityEditText.text.toString().toIntOrNull() ?: 0
 
             val resultIntent = Intent()
-            resultIntent.putExtra("barcode", barcode)
-            resultIntent.putExtra("name", name)
-            resultIntent.putExtra("description", description)
-            resultIntent.putExtra("quantity", quantity)
+            resultIntent.putExtra("Barcode", barcode)
+            resultIntent.putExtra("Name", name)
+            resultIntent.putExtra("Description", description)
+            resultIntent.putExtra("Quantity", quantity)
             setResult(RESULT_OK, resultIntent)
             finish()
         }
