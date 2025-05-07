@@ -1,4 +1,5 @@
 <resources>
+<!--Reusable strings-->
     <string name="app_name">Stock Tracker</string>
     <string name="inventory">INVENTORY</string>
     <string name="scan">SCAN</string>

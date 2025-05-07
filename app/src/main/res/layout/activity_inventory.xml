@@ -8,6 +8,7 @@
     android:background="@color/peach"
     tools:context=".inventory">
 
+<!--Buttons for updating, deleting, and searching products    -->
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="150dp"
@@ -45,6 +46,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.523" />
 
+<!--Results text view and search text field-->
     <TextView
         android:id="@+id/searchTV"
         android:layout_width="174dp"

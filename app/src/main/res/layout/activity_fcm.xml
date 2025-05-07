@@ -6,10 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FCM">
+
+<!--Text views for the notification title and message-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:padding="10dp"
         android:layout_height="match_parent">
+
+<!--Image for notification logo-->
         <ImageView
             android:id="@+id/app_logo"
             android:layout_marginLeft="10dp"
@@ -18,6 +22,7 @@
             android:layout_height="70dp"
             android:src="@drawable/inventory_icon"/>
 
+<!--Configurations for the title and message text views-->
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"

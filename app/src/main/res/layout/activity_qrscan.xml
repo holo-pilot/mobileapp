@@ -8,6 +8,7 @@
     android:background="@color/peach"
     tools:context=".qrscan">
 
+<!--Button to update product details-->
     <Button
         android:id="@+id/btnUpdateqr"
         android:layout_width="233dp"
@@ -20,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.831" />
 
+<!--Button to scan product-->
     <Button
         android:id="@+id/scan_button"
         android:layout_width="233dp"
@@ -32,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.642" />
 
+<!--Configuration for results view-->
     <TextView
         android:id="@+id/resultTV"
         android:layout_width="wrap_content"

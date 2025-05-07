@@ -8,7 +8,7 @@
     android:background="@color/peach"
     tools:context=".MainActivity">
 
-
+<!--Button for inventory-->
     <Button
         android:id="@+id/inventory"
         android:layout_width="272dp"
@@ -22,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.613" />
 
+<!--Button for scanning-->
     <Button
         android:id="@+id/scan"
         android:layout_width="272dp"
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/inventory"
         app:layout_constraintVertical_bias="0.284" />
 
+<!--Image for homepage-->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="220dp"

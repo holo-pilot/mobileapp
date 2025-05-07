@@ -1,6 +1,5 @@
 package com.example.mobileapp
 
-
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -11,32 +10,41 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
 
+// Activity for searching, updating, or deleting a product from the inventory
 class inventory : AppCompatActivity() {
 
+    // Firebase Firestore reference
     private lateinit var db: FirebaseFirestore
+
+    // UI elements
     private lateinit var inputSearch: EditText
     private lateinit var txtDetails: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
+    // Holds the currently found product's barcode (document ID)
     private var currentBarcode: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventory)
 
+        // Initialize Firestore instance
         db = Firebase.firestore
 
+        // Bind UI components
         inputSearch = findViewById(R.id.txtSearch)
         txtDetails = findViewById(R.id.searchTV)
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
 
+        // Set click listener for the Search button
         findViewById<Button>(R.id.btnSearch).setOnClickListener {
             val queryText = inputSearch.text.toString().trim()
             searchProduct(queryText)
         }
 
+        // Launch EditProductActivity if clicked and a product is selected
         btnUpdate.setOnClickListener {
             currentBarcode?.let {
                 val intent = Intent(this, EditProductActivity::class.java)
@@ -45,6 +53,7 @@ class inventory : AppCompatActivity() {
             }
         }
 
+        // On click launch confirm delete dialog if a product is selected
         btnDelete.setOnClickListener {
             currentBarcode?.let {
                 confirmDelete(it)
@@ -52,15 +61,17 @@ class inventory : AppCompatActivity() {
         }
     }
 
+    // Searches Firestore for a product by barcode prefix
     private fun searchProduct(query: String) {
         if (query.isBlank()) return
 
         db.collection("products")
             .whereGreaterThanOrEqualTo("Barcode", query)
-            .whereLessThanOrEqualTo("Barcode", query + '\uf8ff')
+            .whereLessThanOrEqualTo("Barcode", query + '\uf8ff') // Firestore prefix query
             .get()
             .addOnSuccessListener { result ->
                 if (!result.isEmpty) {
+                    // If product is found, extract and display details
                     val doc = result.documents[0]
                     val bacode = doc.getString("Barcode")
                     val name = doc.getString("Name")
@@ -72,6 +83,7 @@ class inventory : AppCompatActivity() {
                     btnUpdate.visibility = View.VISIBLE
                     btnDelete.visibility = View.VISIBLE
                 } else {
+                    // If product not found, show alert and prompt to create it
                     txtDetails.text = "No product found"
                     btnUpdate.visibility = View.VISIBLE
                     btnDelete.visibility = View.VISIBLE
@@ -89,15 +101,18 @@ class inventory : AppCompatActivity() {
                 }
             }
             .addOnFailureListener {
+                // Show error if query fails
                 txtDetails.text = "Error searching product"
             }
     }
 
+    // Prompts the user for confirmation before deleting the product
     private fun confirmDelete(barcode: String) {
         AlertDialog.Builder(this)
             .setTitle("Confirm Deletion")
             .setMessage("Are you sure you want to delete this product?")
             .setPositiveButton("Yes") { _, _ ->
+                // Deletes the product document from Firestore
                 db.collection("products").document(barcode)
                     .delete()
                     .addOnSuccessListener {
