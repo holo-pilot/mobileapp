@@ -73,7 +73,7 @@ class qrscan : AppCompatActivity() {
     // Configures and starts the barcode scanner
     private fun startBarcodeScanning() {
         val options = ScanOptions()
-        options.setDesiredBarcodeFormats(ScanOptions.ALL_CODE_TYPES) // Allow all barcode formats
+        options.setDesiredBarcodeFormats(ScanOptions.ALL_CODE_TYPES) // Allows for wide range of barcode formats
         options.setPrompt("Scan Product Barcode")
         options.setBeepEnabled(true)
         options.setOrientationLocked(false)
