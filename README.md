@@ -2,7 +2,9 @@
 
 ## Overview
 
-`mobileapp` is an Android application designed to help users manage their inventory efficiently. It allows users to add products, track quantities, and update product information. This application leverages Firebase for its backend services, including Firestore for data storage and Firebase Cloud Messaging (FCM) for push notifications.
+`mobileapp` is an Android application designed to help a company manage their inventory efficiently. It allows users to add products, track quantities, and update product information. This application leverages Firebase for its backend services, including Firestore for data storage and Firebase Cloud Messaging (FCM) for push notifications.
+
+This appliaction was tested and emulated on a Google Pixel 7a.
 
 ## Features
 
