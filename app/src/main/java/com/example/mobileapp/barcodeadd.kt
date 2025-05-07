@@ -39,7 +39,6 @@ class barcodeadd : AppCompatActivity() {
         saveBtn = findViewById(R.id.saveBtn)
 
         val defaultName = intent.getStringExtra("defaultName")
-//        nameField.setText(defaultName)
         barcodeField.setText(defaultName)
 
         saveBtn.setOnClickListener {

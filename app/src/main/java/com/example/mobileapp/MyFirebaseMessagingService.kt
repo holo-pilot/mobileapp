@@ -10,7 +10,6 @@ import android.os.Build
 import android.util.Log
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
-
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -23,7 +22,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d("FCM", "Token: $token")
-        // TODO: Send this token to your backend if needed
+
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
@@ -34,7 +33,6 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
         }
 
     }
-
 
     fun getRemoteView(title: String, message: String): RemoteViews {
         val remoteView = RemoteViews("com.example.mobileapp",R.layout.activity_fcm)
@@ -73,11 +71,6 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
 
         notificationManager.notify(0,builder.build())
 
-
     }
-
-
-
-
 
 }

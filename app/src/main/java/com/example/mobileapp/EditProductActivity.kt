@@ -14,7 +14,6 @@ class EditProductActivity : AppCompatActivity() {
     private lateinit var descField: EditText
     private lateinit var quantField: EditText
     private lateinit var saveBtn: Button
-
     private lateinit var barcode: String
 
     override fun onCreate(savedInstanceState: Bundle?) {

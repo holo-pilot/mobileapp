@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">Stock Tracker</string>
-    <string name="inventory">Inventory</string>
-    <string name="scan">Scan</string>
+    <string name="inventory">INVENTORY</string>
+    <string name="scan">SCAN</string>
     <string name="search_hint">Enter barcode</string>
-    <string name="scan_qr">Scan Barcode</string>
+    <string name="scan_qr">SCAN BARCODE</string>
     <string name="resultqr">Result:</string>
     <string name="resultsrch">Results will appear here</string>
-    <string name="updatebtn">Update</string>
-    <string name="savebtn">Save</string>
-    <string name="deletebtn">Delete</string>
-    <string name="searchbtn">Search</string>
+    <string name="updatebtn">UPDATE</string>
+    <string name="savebtn">SAVE</string>
+    <string name="deletebtn">DELETE</string>
+    <string name="searchbtn">SEARCH</string>
     <string name="barcode">Barcode</string>
     <string name="name">Name</string>
     <string name="description">Description</string>

@@ -14,14 +14,12 @@ import com.google.firebase.firestore.ktx.firestore
 class inventory : AppCompatActivity() {
 
     private lateinit var db: FirebaseFirestore
-
     private lateinit var inputSearch: EditText
     private lateinit var txtDetails: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
     private var currentBarcode: String? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

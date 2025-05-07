@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
         val inventory_button = findViewById<Button>(R.id.inventory)
         inventory_button.setOnClickListener {
             val inventory_intent = Intent(this, inventory::class.java)

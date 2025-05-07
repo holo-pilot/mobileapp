@@ -66,8 +66,6 @@ class qrscan : AppCompatActivity() {
     }
 
 
-
-
     private fun handleBarcode(barcode: String) {
         Log.d("Barcode", "handleBarcode called with: $barcode")
         val productRef = db.collection("products").document("$barcode")
